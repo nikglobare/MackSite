@@ -1,11 +1,11 @@
 const config = {
-  user: 'sat', // SQL Server username
-  password: '123', // SQL Server password
-  server: 'localhost', // SQL Server hostname or IP address
-  database: 'master', // Name of the database to connect to
+  user: 'cloudadmin', // SQL Server username
+  password: 'password@123', // SQL Server password
+  server: 'sqlsrvr-12043-p-002.database.windows.net', // SQL Server hostname or IP address
+  database: 'sqldb-12043-p-001', // Name of the database to connect to
   options: {
-      encrypt: false, // Use encryption (required for Azure SQL Database)
-      enableArithAbort: false // Enable or disable arithabort
+      encrypt: true, // Use encryption (required for Azure SQL Database)
+      enableArithAbort: true // Enable or disable arithabort
   }
 };
 

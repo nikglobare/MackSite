@@ -49,7 +49,7 @@ app.get('/api/ranked-data', async (req, res) => {
         ORDER BY Rank;
     `;
     try {
-        const result = await queryDatabase(query, config);
+        const result = await queryDatabase(query, configTPUT);
         res.json(result.recordset);
     } catch (err) {
         console.error('Error querying the database:', err);
