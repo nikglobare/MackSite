@@ -1,6 +1,6 @@
 async function fetchAndDisplayIStatusData() {
     try {
-        const response = await fetch('http://localhost:3000/api/db2-data');
+        const response = await fetch('/api/db2-data');
         const data = await response.json();
 
         // Filter data where C_STATUS starts with "I"

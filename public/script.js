@@ -1,5 +1,5 @@
 async function fetchData() {
-    const response = await fetch('http://localhost:3000/api/ranked-data');
+    const response = await fetch('/api/ranked-data');
     const data = await response.json();
     const backgroundContainer = document.getElementById('background-container');
     

@@ -1,6 +1,6 @@
 async function fetchAndDisplayProductionData() {
     try {
-        const response = await fetch('http://localhost:3000/api/db2-data');
+        const response = await fetch('/api/db2-data');
         const data = await response.json();
 
         console.log("Fetched data:", data);

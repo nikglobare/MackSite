@@ -21,7 +21,7 @@ function exportTableToExcel(tableID, filename = '') {
 
 // Function to fetch and display the problem table
 async function fetchProblemData() {
-    const response = await fetch('http://localhost:3000/api/ranked-data');
+    const response = await fetch('/api/ranked-data');
     const data = await response.json();
 
     // console.log("Data fetched:", data); // Log fetched data

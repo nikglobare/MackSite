@@ -4,7 +4,7 @@ const { queryDatabase } = require('./db');
 const { config, configTPUT, configDB2 } = require('./config');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Enable CORS for all routes
 app.use(cors());
@@ -107,14 +107,14 @@ app.get('/api/db2-data', async (req, res) => {
         AND mg.I_SHIFT_REPTD = ms.MaxShift
     GROUP BY 
         mg.I_PLT, mg.D_SUMM_REPTD, mg.I_SHIFT_REPTD, mg.I_PROD_HR_REPTD, mg.C_STATUS;`; // Replace with your DB2 query
-        try {
-            const result = await queryDatabase(query, configDB2);
-            res.json(result); // Adjust according to the structure of the result
-        } catch (err) {
-            console.error('Error querying the DB2 database:', err);
-            res.status(500).send('Error querying the DB2 database');
-        }
-    });
+    try {
+        const result = await queryDatabase(query, configDB2);
+        res.json(result); // Adjust according to the structure of the result
+    } catch (err) {
+        console.error('Error querying the DB2 database:', err);
+        res.status(500).send('Error querying the DB2 database');
+    }
+});
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
