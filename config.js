@@ -1,8 +1,12 @@
 const config = {
-  user: 'cloudadmin', // SQL Server username
-  password: 'password@123', // SQL Server password
-  server: 'sqlsrvr-12043-p-002.database.windows.net', // SQL Server hostname or IP address
-  database: 'sqldb-12043-p-001', // Name of the database to connect to
+  //user: 'cloudadmin', // SQL Server username
+  //password: 'password@123', // SQL Server password
+  //server: 'sqlsrvr-12043-p-002.database.windows.net', // SQL Server hostname or IP address
+  //database: 'sqldb-12043-p-001', // Name of the database to connect to
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  server: process.env.DB_HOST,
+  database: process.env.DB_NAME,
   options: {
       encrypt: true, // Use encryption (required for Azure SQL Database)
       enableArithAbort: true // Enable or disable arithabort
@@ -10,10 +14,14 @@ const config = {
 };
 
 const configTPUT = {
-  user: 'cloudadmin', // SQL Server username
-  password: 'password@123', // SQL Server password
-  server: 'sqlsrvr-12043-p-002.database.windows.net', // SQL Server hostname or IP address
-  database: 'sqldb-12043-p-001', // Name of the database to connect to
+  //user: 'cloudadmin', // SQL Server username
+  //password: 'password@123', // SQL Server password
+  //server: 'sqlsrvr-12043-p-002.database.windows.net', // SQL Server hostname or IP address
+  //database: 'sqldb-12043-p-001', // Name of the database to connect to
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  server: process.env.DB_HOST,
+  database: process.env.DB_NAME,
   options: {
       encrypt: true, // Use encryption (required for Azure SQL Database)
       enableArithAbort: true // Enable or disable arithabort
